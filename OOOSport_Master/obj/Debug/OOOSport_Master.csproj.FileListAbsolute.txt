@@ -1,0 +1,54 @@
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\bin\Debug\OOOSport_Master.exe.config
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\bin\Debug\OOOSport_Master.exe
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\bin\Debug\OOOSport_Master.pdb
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\bin\Debug\EntityFramework.dll
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\bin\Debug\EntityFramework.xml
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.AssemblyReference.cache
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.SuggestedBindingRedirects.cache
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\MainWindow.g.cs
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\ProductWindow.g.cs
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\App.g.cs
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master_Content.g.cs
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master_MarkupCompile.cache
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master_MarkupCompile.lref
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\MainWindow.baml
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\ProductWindow.baml
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master.g.resources
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master.Properties.Resources.resources
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.GenerateResource.cache
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.CoreCompileInputs.cache
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.CopyComplete
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master.exe
+C:\Users\Андрей\source\repos\OOOSport_Master\OOOSport_Master\obj\Debug\OOOSport_Master.pdb
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\OOOSport_Master.exe.config
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\OOOSport_Master.exe
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\OOOSport_Master.pdb
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\EntityFramework.dll
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\EntityFramework.xml
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\EntityFramework.SqlServer.xml
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\ru\EntityFramework.resources.dll
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.AssemblyReference.cache
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.SuggestedBindingRedirects.cache
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\MainWindow.g.cs
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\ProductWindow.g.cs
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\App.g.cs
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master_Content.g.cs
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master_MarkupCompile.cache
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master_MarkupCompile.lref
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\MainWindow.baml
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\ProductWindow.baml
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master.g.resources
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master.Properties.Resources.resources
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.GenerateResource.cache
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.CoreCompileInputs.cache
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.CopyComplete
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master.exe
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master.pdb
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OrderWindow.g.cs
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OrderWindow.baml
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\EnditingProductWindow.g.cs
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\EnditingProductWindow.baml
