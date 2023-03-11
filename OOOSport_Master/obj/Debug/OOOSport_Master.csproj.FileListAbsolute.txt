@@ -52,3 +52,7 @@ C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_
 C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OrderWindow.baml
 C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\EnditingProductWindow.g.cs
 C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\EnditingProductWindow.baml
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\EasyCaptcha.Wpf.dll
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\EasyCaptcha.Wpf.pdb
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+C:\Users\andry\OneDrive\Рабочий стол\OOOSport_Master-master\OOOSport_Master\obj\Debug\OOOSport_Master.csproj.ResolveComReference.cache

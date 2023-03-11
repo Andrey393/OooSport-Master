@@ -27,8 +27,24 @@ namespace OOOSport_Master
             Helper.DB = new Entini.OOOSportMasterEntities1();
         }
 
-        public void Enter(string Login, string Password)
+        int popitk = 0;
+
+        private void ButtonEnter_Click(object sender, RoutedEventArgs e)
         {
+            string Login = TextBoxLogin.Text;
+            string Password = TextBoxPassword.Text;
+
+            if (popitk > 0)
+            {
+                if (TextBoxCapcha.Text != CapchaElement.CaptchaText)
+                {
+                    MessageBox.Show("Неправильная капча");
+                    CapchaElement.CreateCaptcha(EasyCaptcha.Wpf.Captcha.LetterOption.Alphanumeric, 5);
+                    return;
+
+                }
+
+            }
             Helper.User = Helper.DB.User.Where(x => x.UserLogin == Login && x.UserPassword == Password).ToList().FirstOrDefault();
             if (Helper.User != null)
             {
@@ -38,15 +54,13 @@ namespace OOOSport_Master
             }
             else
             {
-                MessageBox.Show("Не");
+                popitk++;
+                MessageBox.Show("Неправильный логин или пароль");
+                CapchaElement.CreateCaptcha(EasyCaptcha.Wpf.Captcha.LetterOption.Alphanumeric, 5);
+                CapchaElement.Visibility = Visibility.Visible;
+                TextBoxCapcha.Visibility = Visibility.Visible;
             }
-        }
 
-        private void ButtonEnter_Click(object sender, RoutedEventArgs e)
-        {
-            string Login = TextBoxLogin.Text;
-            string Password = TextBoxPassword.Text;
-            Enter(Login,Password);
 
         }
     }

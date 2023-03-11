@@ -3,29 +3,95 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:capch="clr-namespace:EasyCaptcha.Wpf;assembly=EasyCaptcha.Wpf"
         xmlns:local="clr-namespace:OOOSport_Master"
         mc:Ignorable="d"
-        Title="Авторизация" Height="450" Width="500" WindowStartupLocation="CenterScreen">
+        
+        Title="Авторизация" MinHeight="511" MinWidth="566" WindowStartupLocation="CenterScreen" Height="511" Width="566"
+        Icon="/иконка.png" Foreground="Black">
+    <Window.Resources>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" StrokeDashArray="1 2" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" SnapsToDevicePixels="true" StrokeThickness="1"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#d8d3e7"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="Transparent"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#9d91c3"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#9d91c3"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FFE0E0E0"/>
+        <Style TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border CornerRadius="5" x:Name="border" Background="{TemplateBinding Background}" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" SnapsToDevicePixels="true">
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#d2c6f4"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="#d2c6f4"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
 
     <Grid>
 
         <Grid.RowDefinitions>
-            <RowDefinition Height="76*"/>
+            <RowDefinition Height="87*"/>
+            <RowDefinition Height="80*"/>
+            <RowDefinition Height="67*"/>
             <RowDefinition Height="59*"/>
-            <RowDefinition Height="94*"/>
-            <RowDefinition Height="99*"/>
-            <RowDefinition Height="106*"/>
+            <RowDefinition Height="74*"/>
+            <RowDefinition Height="55*"/>
+            <RowDefinition Height="73*"/>
         </Grid.RowDefinitions>
         <Grid.ColumnDefinitions>
-            <ColumnDefinition  Width="44*"/>
-            <ColumnDefinition Width="163*"/>
-            <ColumnDefinition Width="43*"/>
+            <ColumnDefinition  Width="50*"/>
+            <ColumnDefinition Width="180*"/>
+            <ColumnDefinition Width="53*"/>
         </Grid.ColumnDefinitions>
-        <TextBox x:Name="TextBoxLogin" HorizontalAlignment="Center" TextWrapping="Wrap" Text="Ivanov@namecomp.ru" VerticalAlignment="Center" Width="176" Grid.Column="1" Grid.Row="1" Height="18"/>
-        <TextBox x:Name="TextBoxPassword" HorizontalAlignment="Center" TextWrapping="Wrap" Text="2L6KZG" VerticalAlignment="Center" Width="172" Grid.Column="1" Grid.Row="2" Height="18"/>
-        <Button x:Name="ButtonEnter" Grid.Column="1" Content="Войти" HorizontalAlignment="Left" Margin="188,30,0,0" Grid.Row="3" VerticalAlignment="Top" Width="114" Click="ButtonEnter_Click" Height="34"/>
-        <Button Grid.Column="1" Content="Войти как гость" HorizontalAlignment="Left" Margin="33,31,0,0" Grid.Row="3" VerticalAlignment="Top" Width="105" Height="34"/>
-        <Image HorizontalAlignment="Left" Height="64" Margin="10,0,0,0" VerticalAlignment="Center" Width="66" Source="/логотип.png"/>
+        <capch:Captcha Visibility="Hidden" Name="CapchaElement" Grid.Column="1" Margin="9,18,151,6" Grid.Row="4"/>
+
+        <TextBox  x:Name="TextBoxLogin" TextWrapping="Wrap" Text="Ivanov@namecomp.ru" VerticalAlignment="Top" Grid.Column="1" Grid.Row="2" Height="20" Margin="55,18,55,0" FontSize="14"/>
+        <TextBox x:Name="TextBoxPassword" TextWrapping="Wrap" Text="2L6KZG" VerticalAlignment="Top" Grid.Column="1" Grid.Row="3" Height="20" Margin="56,14,56,0" FontSize="14"/>
+        <Button x:Name="ButtonEnter" Grid.Column="1" Content="Войти" Margin="82,5,91,0" Grid.Row="5" Click="ButtonEnter_Click" Foreground="#FF493E4D" Height="40" VerticalAlignment="Top"/>
+        <Button Grid.Column="1" Content="Войти как гость" Margin="122,7,132,0" Grid.Row="6" Foreground="#FF493E4D" FontSize="11" Height="33" VerticalAlignment="Top"/>
+        <Image HorizontalAlignment="Center" Height="64" VerticalAlignment="Center" Width="66" Source="/логотип.png" Grid.Column="1"/>
+        <Label  Grid.Column="1" Content=" Авторизация" HorizontalAlignment="Center" Margin="0,5,0,0" Grid.Row="1" VerticalAlignment="Top" Width="110" FontSize="14" Height="29"/>
+        <TextBox Visibility="Hidden" x:Name="TextBoxCapcha" TextWrapping="Wrap" Grid.Column="1" Grid.Row="4" Margin="219,33,14,30"/>
 
     </Grid>
 </Window>

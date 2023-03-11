@@ -1,11 +1,14 @@
 ﻿using OOOSport_Master.Classes;
+using OOOSport_Master.Entini;
 using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
 using System.Windows.Controls;
+using System.Windows.Controls.Primitives;
 using System.Windows.Data;
 using System.Windows.Documents;
 using System.Windows.Input;
@@ -21,13 +24,14 @@ namespace OOOSport_Master
     public partial class EnditingProductWindow : Window
     {
         public List<Entini.Product> enditinProduct;
+        Entini.Product product;
         int index;
 
         public EnditingProductWindow()
         {
             InitializeComponent();
             this.enditinProduct = ProductWindow.productsData.ToList();
-            this.index = ProductWindow.index;
+            this.index = ProductWindow.indexList;
         }
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
@@ -55,14 +59,75 @@ namespace OOOSport_Master
             TextBoxDecription.Text = enditinProduct[index].ProductDecription;
             TextBoxCost.Text = enditinProduct[index].ProductCost.ToString();
             TextBoxDiscount.Text = enditinProduct[index].ProductDiscount.ToString();
+            TextBoxCount.Text = enditinProduct[index].ProductCount.ToString();
             ImageProduct.Source = new BitmapImage(new Uri("Image/"+ enditinProduct[index].ProductPhoto, UriKind.Relative));
         }
 
         private void Window_Closed(object sender, EventArgs e)
         {
-            ProductWindow product = new ProductWindow();
-            product.Show();
+            ProductWindow productWindow = new ProductWindow();
+            productWindow.Show();
             this.Close();
+        }
+
+        private void ButtonSave_Click(object sender, RoutedEventArgs e)
+        {
+            try
+            {
+                Data();
+                //if (photo != null)
+                //{
+                //    string s = path + "\\Товар\\" + productArticle + ".jpg";
+                //    if (File.Exists(s))
+                //    {
+                //        File.Delete(s);
+                //    }
+                //    pictureBoxProduct.BackgroundImage.Save(s);
+                //}
+                Helper.DB.SaveChanges();
+                MessageBox.Show("Информация в БД успешно обновлена");
+                this.Close();
+            }
+            catch
+            {
+                MessageBox.Show("Ошибка при обновление данных в БД");
+                return;
+            }
+
+        }
+        void Data()
+        {
+            string artickle;
+
+            artickle = TextBoxArtikle.Text;
+            if (string.IsNullOrEmpty(artickle))
+            {
+                Entini.Product productFind = Helper.DB.Product.Find(artickle);
+                if (productFind != null)
+                {
+                    MessageBox.Show("Такой артикл уже есть");
+                    return;
+                }
+                product = new Entini.Product();
+            }
+            else
+            {
+                product = Helper.DB.Product.Find(artickle);
+
+            }
+
+            product.ProductArticle = artickle;
+            product.ProductName = TextBoxName.Text;
+            product.ProductDecription = TextBoxDecription.Text;
+           // product.ProductPhoto = photo;
+            product.ProductDiscount = Convert.ToInt32(TextBoxDiscount.Text);
+            product.ProductCost = Convert.ToDouble(TextBoxCost.Text);
+            product.ProductManufactureId = ComboBoxManufactory.SelectedIndex + 1;
+            product.ProductProviderId = 1;
+            product.ProductCategoryId = ComboBoxCategory.SelectedIndex + 1;
+            product.ProductUnitId = 1;
+            product.ProductCount = Convert.ToInt32(TextBoxCount.Text);
+
         }
     }
 }

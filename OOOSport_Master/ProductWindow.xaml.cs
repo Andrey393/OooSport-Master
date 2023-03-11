@@ -27,11 +27,12 @@ namespace OOOSport_Master
         {
             InitializeComponent();
             Helper.DB = new Entini.OOOSportMasterEntities1();
+            ButtonAddProduct.Visibility = Visibility.Hidden;
         }
         public static List<Entini.Product> productsData;
         public static List<Classes.ProductClass> orders; // Добавление заказы
         List<Classes.ProductClass> producList = new List<ProductClass>();
-        public static int index;
+        public static int indexList;
 
         int filterCategory;
         string searchProduct;
@@ -84,10 +85,12 @@ namespace OOOSport_Master
 
         }
 
-      
 
         private void Window_Loaded(object sender, RoutedEventArgs e)
         {
+            
+
+
             if(Helper.User != null)
             {
                 LabelUser.Content = Helper.User.UserLastName + "Роль: " + Helper.User.Role.RoleName;
@@ -138,34 +141,44 @@ namespace OOOSport_Master
 
         private void ListViewProduct_PreviewMouseRightButtonDown(object sender, MouseButtonEventArgs e)
         {
-            Classes.ProductClass item = (ProductClass)(sender as ListView).SelectedItem;
-            int index = orders.FindIndex(x => x.Artikle == item.Artikle);
+            indexList = ListViewProduct.SelectedIndex;
 
-            if (index < 0)
+            if (indexList >= 0)
             {
-                orders.Add(new Classes.ProductClass
-                {
-                    Artikle = item.Artikle,
-                    ProductPhoto = item.ProductPhoto,
-                    Image = item.Image,
-                    ProductName = item.ProductName,
-                    ProductDecription = item.ProductDecription,
-                    ProductCategory = item.ProductCategory,
-                    ProductCost = item.ProductCost,
-                    ProductDiscount = item.ProductDiscount,
-                    ProductCostDiscount = item.ProductCost - (item.ProductCost * item.ProductDiscount) / 100,
-                    ProductCount = 1
+                Classes.ProductClass item = (ProductClass)(sender as ListView).SelectedItem;
+                int index = orders.FindIndex(x => x.Artikle == item.Artikle);
 
-                });
+                if (index < 0)
+                {
+                    orders.Add(new Classes.ProductClass
+                    {
+                        Artikle = item.Artikle,
+                        ProductPhoto = item.ProductPhoto,
+                        Image = item.Image,
+                        ProductName = item.ProductName,
+                        ProductDecription = item.ProductDecription,
+                        ProductCategory = item.ProductCategory,
+                        ProductCost = item.ProductCost,
+                        ProductDiscount = item.ProductDiscount,
+                        ProductCostDiscount = item.ProductCost - (item.ProductCost * item.ProductDiscount) / 100,
+                        ProductCount = 1
+
+                    });
+                }
+                else
+                {
+                    orders[index].ProductCount++;
+                }
+                if (orders != null)
+                {
+                    ButtonOrder.IsEnabled = true;
+                }
             }
             else
             {
-                orders[index].ProductCount++;
+                MessageBox.Show("Выберете товар");
             }
-            if (orders !=null)
-            {
-                ButtonOrder.IsEnabled = true;
-            }
+           
         }
 
         private void ButtonOrder_Click(object sender, RoutedEventArgs e)
@@ -177,10 +190,24 @@ namespace OOOSport_Master
 
         private void ListViewProduct_PreviewMouseDoubleClick(object sender, MouseButtonEventArgs e)
         {
-            index = ListViewProduct.SelectedIndex;
-            EnditingProductWindow enditing= new EnditingProductWindow();
-            enditing.Show();
-            this.Hide();
+            
+            if (Helper.User.RoleID == 1)
+            {
+                EnditingProductWindow enditing = new EnditingProductWindow();
+                enditing.Show();
+                this.Hide();
+            }
+            
+        }
+
+        private void ListViewProduct_PreviewMouseLeftButtonDown(object sender, MouseButtonEventArgs e)
+        {
+            indexList = ListViewProduct.SelectedIndex;
+        }
+
+        private void ButtonAddProduct_Click(object sender, RoutedEventArgs e)
+        {
+
         }
     }
 }
